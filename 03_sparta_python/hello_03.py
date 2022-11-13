@@ -134,46 +134,47 @@
 
 # --------------------------------------------------
 # --------------------------------------------------
-# map, filter, lambda 식
-# map(a, b) : b(list)를 하나씩 돌면서 a(함수)에 넣어라
+# # map, filter, lambda 식
+# # map(a, b) : b(list)를 하나씩 돌면서 a(함수)에 넣어라
 
-people = [
-    {'name': 'bob', 'age': 20},
-    {'name': 'carry', 'age': 38},
-    {'name': 'john', 'age': 7},
-    {'name': 'smith', 'age': 17},
-    {'name': 'ben', 'age': 27},
-    {'name': 'bobby', 'age': 57},
-    {'name': 'red', 'age': 32},
-    {'name': 'queen', 'age': 25}
-]
-
-
-# def check_adult(person):
-#     return '성인' if person['age'] >= 20 else '청소년'
+# people = [
+#     {'name': 'bob', 'age': 20},
+#     {'name': 'carry', 'age': 38},
+#     {'name': 'john', 'age': 7},
+#     {'name': 'smith', 'age': 17},
+#     {'name': 'ben', 'age': 27},
+#     {'name': 'bobby', 'age': 57},
+#     {'name': 'red', 'age': 32},
+#     {'name': 'queen', 'age': 25}
+# ]
 
 
-# result = map(check_adult, people)
+# # def check_adult(person):
+# #     return '성인' if person['age'] >= 20 else '청소년'
 
-# map + lambda 식
-# result = map(lambda person: ('성인' if person['age'] >= 20 else '청소년'), people)
 
-# # filter(): true 인자들만 뽑아오기
-result = filter(lambda x: x['age'] > 20, people)
+# # result = map(check_adult, people)
 
-print(list(result))
+# # map + lambda 식
+# # result = map(lambda person: ('성인' if person['age'] >= 20 else '청소년'), people)
+
+# # # filter(): true 인자들만 뽑아오기
+# result = filter(lambda x: x['age'] > 20, people)
+
+# print(list(result))
 
 
 # --------------------------------------------------
 # --------------------------------------------------
-# 함수 심화
-# 함수에 인수를 넣을 때, 어떤 매개변수에 어떤 값을 넣을지 정해줄 수 있어요. 순서 상관 없음!
+# # 함수 심화
+# # 함수에 인수를 넣을 때, 어떤 매개변수에 어떤 값을 넣을지 정해줄 수 있어요. 순서 상관 없음!
 
 # def cal(a, b):
 #     return a+2*b
 
+
 # result = cal(1, 2)
-# result = cal(b=2, a=1) # 지정하면 순서 상관 없음!
+# # result = cal(b=2, a=1) # 지정하면 순서 상관 없음!
 # print(result)
 
 # --------------------------------------------------
@@ -183,7 +184,7 @@ print(list(result))
 #     return a+2*b
 
 
-# result = cal2(1, 3)
+# result = cal2(1)
 # print(result)
 
 # --------------------------------------------------
@@ -202,6 +203,7 @@ print(list(result))
 # def get_kwargs(**kwargs):
 #     print(kwargs)
 
+
 # get_kwargs(name='bob')
 # get_kwargs(name='john', age='27')
 
@@ -215,7 +217,7 @@ print(list(result))
 
 #     def damage(self, attack):
 #         self.hp = self.hp - attack
-#         if self.hp < 0:
+#         if self.hp <= 0:
 #             self.alive = False
 
 #     def status_check(self):
@@ -224,11 +226,16 @@ print(list(result))
 #         else:
 #             print('죽었다')
 
-# m = Monster()
-# m.damage(120)
 
-# m2 = Monster()
-# m2.damage(90)
+# 괴물1 = Monster()
+# 괴물2 = Monster()
 
-# m.status_check()
-# m2.status_check()
+# 괴물1.damage(120)
+# 괴물2.damage(80)
+
+# print(괴물1.hp)
+# 괴물1.status_check()
+
+# print(괴물2.hp)
+# 괴물2.status_check()
+
