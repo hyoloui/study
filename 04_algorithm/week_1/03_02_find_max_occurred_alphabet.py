@@ -9,16 +9,17 @@ def find_max_occurred_alphabet(string):
             continue
         arr_index = ord(char) - ord('a')
         alphabet_occurrence_array[arr_index] += 1
-    
+
     max_occurrence = 0
     max_alphabet_index = 0
     for index in range(len(alphabet_occurrence_array)):
-      # index 0 => alphbet_occurrence 3
-      alphabet_occurrence = alphabet_occurrence_array[index]
+        alphabet_occurrence = alphabet_occurrence_array[index]
 
-      if alphabet_occurrence > max_occurrence:
-        max_alphabet_index = index
-        max_occurrence = alphabet_occurrence
+        # 가장 큰 숫자가 들어 왔을 때 만! max_alphabet_index를 저장 한다!
+        if alphabet_occurrence > max_occurrence:
+            max_occurrence = alphabet_occurrence
+            max_alphabet_index = index
+
     return chr(max_alphabet_index + ord("a"))
 
 
