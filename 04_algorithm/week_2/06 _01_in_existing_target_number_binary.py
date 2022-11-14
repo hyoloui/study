@@ -1,5 +1,6 @@
-finding_target = 16
+finding_target = 14
 finding_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+# 시간복잡도 : O(logN)
 
 
 def is_existing_target_number_binary(target, array):
@@ -9,7 +10,9 @@ def is_existing_target_number_binary(target, array):
     find_count = 0 # 카운트
 
     while current_min <= current_max: # 최솟값 <= 최댓값
+        find_count += 1
         if array[current_guess] == target: # 시돗값 == 타겟
+            print(find_count)
             return True
         elif array[current_guess] < target: # 시돗값 < 타겟
             current_min = current_guess + 1 # 최솟값 = 시돗값 + 1
