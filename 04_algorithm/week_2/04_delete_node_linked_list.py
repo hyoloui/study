@@ -38,8 +38,18 @@ class LinkedList:
         node.next = new_node
         new_node.next = next_node
 
+    def delete_node(self, index):
+        if index == 0:
+            self.head = self.head.next
+            return
+        node = self.get_node(index - 1)
+        node.next = node.next.next
+        return
+
+
 linked_list = LinkedList(5)
 linked_list.append(12)
 linked_list.append(8)
 linked_list.add_node(1, 6)
+linked_list.delete_node(0)
 linked_list.print_all()
