@@ -1,5 +1,4 @@
 input = [3, 5, 6, 1, 2, 4]
-max_num = 0
 
 # 풀이
 # def find_max_num(array):
