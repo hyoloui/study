@@ -1,3 +1,5 @@
+# 큐란? 한쪽끝으로 자료를 넣고, 반대쪽에서 자료를 뺄 수 있는 선형구조
+# 내 생각 : 게시판이나 투두리스트?
 class Node:
     def __init__(self, data):
         self.data = data

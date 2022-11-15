@@ -1,3 +1,4 @@
+# 스택이란? 한쪽 끝으로만 자료를 넣고 뺄 수 있는 구조 ex)빨래통
 class Node:
     def __init__(self, data):
         self.data = data
