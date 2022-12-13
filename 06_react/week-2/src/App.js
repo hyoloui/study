@@ -1,15 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
-// import StyledCompo from "./component/StyledCompo";
-// import Update from "./component/Update";
-// import UseEffect from "./component/UseEffect"
 import { useSelector, useDispatch } from "react-redux"; // import 해주세요.
-import { plusOne, minusOne } from "./redux/modules/counter";
+import { addNumber, deleteNumber } from "./redux/modules/counter";
 const App = () => {
+    const [number, setNumber] = useState(0);
+    const globalNumber = useSelector((state)=>state.counter.number);
     const dispatch = useDispatch();
-    const state = useSelector((state)=>state)
-    const number = useSelector((state)=>state.counter.number)
-    console.log(number)
+
+    const onChangeHandler = (event) => {
+        const{value} = event.target;
+        setNumber(+value)
+    }
+    const onClickAddNumberHandler = () => {
+        dispatch(addNumber(number));
+    }
+    const onClickDeleteNumberHandler = () => {
+        dispatch(deleteNumber(number))
+    }
+    console.log(number);
     
     return (
         <>
@@ -21,22 +29,13 @@ const App = () => {
                 {/* <UseEffect/> */}
             </div>
 
-            {number}
-            <button
-                onClick={() => {
-                    dispatch(plusOne());
-                }}
-            >
-                +1
-                
-            </button>
-            <button
-                onClick={() => {
-                    dispatch(minusOne());
-                }}
-            >
-                -1
-            </button>
+            <div>
+                {globalNumber}
+                <input type="number" onChange={onChangeHandler}/>
+                <button onClick={onClickAddNumberHandler}>더하기</button>
+                <button onClick={onClickDeleteNumberHandler}>빼기</button>
+            </div>
+            
         </>
     );
 };
